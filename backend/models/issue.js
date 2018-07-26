@@ -11,7 +11,7 @@ const issueSchema = new Schema({
 	description: {
 		type: String
 	},
-	sevreity: {
+	severity: {
 		type: String
 	},
 	status: {
