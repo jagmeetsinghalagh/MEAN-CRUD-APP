@@ -1,3 +1,33 @@
-<p>
-  list works!
-</p>
+<div class="container">
+	<a class="btn btn-link btn-primary m-4" routerLink="/create">
+		<i class="fa fa-plus" aria-hidden="true"></i> Add Issue
+	</a>
+	<hr>
+	<div class="table-responsive-sm mb-3" *ngIf = "issues.length>0">
+		<h2 class="text-center">Issues</h2>
+		<table class="table">
+			<tr>
+				<th>Title</th>
+				<th>Description</th>
+				<th>Severity</th>
+				<th>Status</th>
+				<th>Action</th>
+			</tr>
+			<tr *ngFor = " let issue of issues">
+				<td>{{ issue.title }}</td>
+				<td>{{ issue.description }}</td>
+				<td>{{ issue.severity }}</td>
+				<td>{{ issue.status }}</td>
+				<td>
+					<button (click)="updateIssue(issue)" class=" m-2 btn btn-info">
+						<i class="fa fa-pencil-square-o" aria-hidden="true">
+						</i> Edit
+					</button>
+					<button (click) = "deleteIssue(issue)" class=" m-2 btn btn-danger">
+						<i class="fa fa-trash" aria-hidden="true"></i> Delete
+					</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>

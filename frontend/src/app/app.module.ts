@@ -7,19 +7,23 @@ import { AppComponent } from './app.component';
 import { ListComponent } from './components/list/list.component';
 import { CreateComponent } from './components/create/create.component';
 import { IssueService } from './services/issue.service';
-import { EditComponent } from './components/edit/edit.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
     CreateComponent,
-    EditComponent
+    NavbarComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [IssueService],
   bootstrap: [AppComponent]
